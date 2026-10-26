@@ -85,18 +85,21 @@ The Central Library wants to manage book lending and cultural events.
 
 ### Relationships and Constraints
 
-| **Relationship** | **Cardinality** | **Participation** | **Notes**                          || ---------------- | --------------- | ----------------- | ------------------------------------------------------------------------ |
+| **Relationship** | **Cardinality** | **Participation** | **Notes**                                                                |
+| ---------------- | --------------- | ----------------- | ------------------------------------------------------------------------ |
 | Member–Loan      | 1 : M           | Total on Loan     | A loan must belong to one member                                         |
 | Book–Loan        | 1 : M           | Total on Loan     | A loan must refer to one book                                            |
 | Room–Event       | 1 : M           | Total on Event    | An event must be assigned a room                                         |
 | Event–Speaker    | M : N           | Partial           | Eventsmay have multiple speakers,and speakers may attend multiple events |
 | Member–Event     | M : N           | Partial           | Members may attend multiple events                                       |
 | Book–Member      | M : N           | Total on both     | Many members can borrow many books over time                             |
-
 ### Assumptions
 1.A member can borrow multiple books, but each loan entry is for one book at a time.
+
 2.FineAmount is calculated separately and stored in the Loan entity.
+
 3.A room can host many events but an event can take place in only one room.
+
 ---
 
 # Scenario C: Restaurant Table Reservation & Ordering
@@ -140,8 +143,11 @@ A popular restaurant wants to manage reservations, orders, and billing.
 
 ### Assumptions
 1.A customer may or may not make a reservation before ordering.
+
 2.Each order contains one dish per entry (multiple dishes = multiple order entries).
+
 3.Billing is done per reservation, not per individual order.
+
 4.A waiter can serve multiple orders but an order is handled by exactly one waiter.
 
 ## Instructions for Students
