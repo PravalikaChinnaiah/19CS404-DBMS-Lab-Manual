@@ -22,18 +22,29 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 - Payments tracked for memberships and sessions.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
+*Paste or attach your diagram here*
+<img width="1358" height="922" alt="image" src="https://github.com/user-attachments/assets/0b8e844f-212f-4e4a-a747-92b7dee89d2c" />
+
 ![ER Diagram](er_diagram_fitness.png)
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+| Entity                   | Attributes (PK, FK)              | Notes                          |
+|--------                  |--------------------              |-------                         |
+| Member                    MemberID (PK), Name,               Stores member personal 
+                            Phone, MembershipType               and membership details
+|  Program                 | ProgramID (PK), Type, 
+                             Duration                           | Different fitness programs                                                                           (Yoga, Zumba,etc.)        |
+|  Trainers                |  TrainerID (PK), Name, Phone, 
+                              Specialization, Experience        |  Trainers working in the gym  |
+| PersonalTrainingSession  |  SessionID (PK), MemberID (FK), 
+                             TrainerID (FK), Date, Time          |  Personal training session                                                                         booked by members          |
+|   Attendance             | ID (PK), MemberID (FK), 
+                             ProgramID (FK), Date, Status        |  Tracks which member 
+                                                                    attended which program      |
+|  Payment                 | ID (PK), MemberID (FK), Amount, 
+                              Date, Mode                          |   Payment records of 
+                                                                         members                |
 
 ### Relationships and Constraints
 
