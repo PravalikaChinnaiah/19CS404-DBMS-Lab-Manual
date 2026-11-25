@@ -135,10 +135,11 @@ ProductID   Name        Category     Price       Stock
 ----------  ----------  -----------  ----------  ----------
 104         Tablet      Electronics  100         50
 -- Paste your SQL code below for Question 2
-```
+
 
 **Output:**
 <img width="1254" height="280" alt="image" src="https://github.com/user-attachments/assets/65107c22-18d9-494f-86aa-d2d3120753c7" />
+
 
 
 **Question 3**
@@ -157,7 +158,7 @@ cid    name             type        notnull     dflt_value  pk
 1      DepartmentName   TEXT        0                       0
 
 -- Paste your SQL code below for Question 3
-```
+
 
 **Output:**
 <img width="1254" height="389" alt="image" src="https://github.com/user-attachments/assets/e7c61022-a247-433c-894a-5d104cef570c" />
@@ -189,7 +190,7 @@ cid         name         type                               notnull     dflt_val
 5           discount     DECIMAL(5,2)                       0                       0
 
 -- Paste your SQL code below for Question 4
-```
+
 
 **Output:**
 <img width="1250" height="376" alt="image" src="https://github.com/user-attachments/assets/e3de93c6-3525-4b84-b037-59b80993dcf3" />
@@ -208,7 +209,7 @@ INSERT INTO ProjectAssignments (AssignmentID, EmployeeID, ProjectID, AssignmentD
 Error: FOREIGN KEY constraint failed
 
 -- Paste your SQL code below for Question 5
-```
+
 
 **Output:**
 <img width="1264" height="321" alt="image" src="https://github.com/user-attachments/assets/1d556ae3-f429-4b6f-a9de-d0b7c8a3ec5c" />
@@ -239,7 +240,7 @@ cid         name         type                               notnull     dflt_val
 4           salesman_id  number                             0                       0
 
 -- Paste your SQL code below for Question 6
-```
+
 
 **Output:**
 
@@ -259,7 +260,7 @@ INSERT INTO Shipments (ShipmentID, ShipmentDate, SupplierID, OrderID) VALUES (2,
 Error: FOREIGN KEY constraint failed
 
 -- Paste your SQL code below for Question 7
-```
+
 
 **Output:**
 <img width="1256" height="286" alt="image" src="https://github.com/user-attachments/assets/d3278d72-abd6-4a34-8341-bc2d8f2bb06b" />
@@ -280,7 +281,7 @@ ISBN            Title           Author              Publisher      YearPublished
 978-0987654321  Gone with the   Margaret Mitchell   Macmillan      1936
 978-1122334455  Moby Dick       Herman Melville     Harper & Brot  1851
 -- Paste your SQL code below for Question 8
-```
+
 
 **Output:**
 <img width="1263" height="340" alt="image" src="https://github.com/user-attachments/assets/0e4d51d9-66db-4a0b-baee-8bc00fcd5ffd" />
@@ -307,7 +308,7 @@ RollNo      Name        Gender      Subject     MARKS
 203         James Bond  M           Literature  78
 
 -- Paste your SQL code below for Question 9
-```
+
 
 **Output:**
 <img width="1256" height="311" alt="image" src="https://github.com/user-attachments/assets/6b88364a-a2c2-471c-9ffe-b6fe37546658" />
@@ -328,7 +329,7 @@ VALUES (1, '2024-08-08'),(1,'2024-09-08');
 Error: UNIQUE constraint failed: Invoices.InvoiceID
 
 -- Paste your SQL code below for Question 10
-```
+
 
 **Output:**
 <img width="1257" height="317" alt="image" src="https://github.com/user-attachments/assets/b87c40cd-5ffe-4096-8ff4-8bcbec85053f" />
