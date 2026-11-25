@@ -52,34 +52,57 @@ Write a SQL statement to change the EMAIL and COMMISSION_PCT column of the follo
 Employees table
 
 ---------------
+
 employee_id
+
 first_name
+
 last_name
+
 email
+
 phone_number
+
 hire_date
+
 job_id
+
 salary
+
 commission_pct
+
 manager_id
+
 department_id
+
 For example:
 
-Test	Result
+
+Test	
+
 SELECT EMPLOYEE_ID,FIRST_NAME,EMAIL,COMMISSION_PCT FROM EMPLOYEES 
+
 WHERE DEPARTMENT_ID=110 LIMIT 1;
+
+Result
+
+
 EMPLOYEE_ID  FIRST_NAME  EMAIL          COMMISSION_PCT
 -----------  ----------  -------------  --------------
 205          Shelley     not available  0.55
 
 
-```sql
+sql
+
 UPDATE EMPLOYEES
+
 SET EMAIL = 'not available',
+
     COMMISSION_PCT = 0.55
+
 WHERE DEPARTMENT_ID = 110;
 
-```
+
 
 **Output:**
 <img width="502" height="230" alt="image" src="https://github.com/user-attachments/assets/80949d4c-9779-49fa-ab08-ba5e5f2926fd" />
@@ -93,14 +116,19 @@ Write a SQL statement to Update the grade of all customers in Chennai city as  5
 
 Customer table (customer_id,cust_name,city,grade,salesman_id)
 
-```sql
+sql
+
 UPDATE customer
+
 SET grade = 5
+
 WHERE city = 'Chennai';
 
-```
+
 
 **Output:**
+
+
 <img width="555" height="315" alt="image" src="https://github.com/user-attachments/assets/d9399df4-98bf-49e2-8b49-db68e6a4bc5b" />
 
 
@@ -113,23 +141,39 @@ Write a SQL statement to change the email column of employees table with 'Unavai
 Employees table
 
 ---------------
+
 employee_id
+
 first_name
+
 last_name
+
 email
+
 phone_number
+
 hire_date
+
 job_id
+
 salary
+
 commission_pct
+
 manager_id
+
 department_id
+
  
 
 For example:
 
-Test	Result
+Test	
+
 SELECT EMPLOYEE_ID,FIRST_NAME,EMAIL FROM EMPLOYEES LIMIT 2;
+
+Result
+
 EMPLOYEE_ID  FIRST_NAME  EMAIL
 -----------  ----------  -----------
 100          Steven      Unavailable
@@ -137,11 +181,13 @@ EMPLOYEE_ID  FIRST_NAME  EMAIL
 
 
 
-```sql
+sql
+
 UPDATE employees
+
 SET email='Unavailable';
 
-```
+
 
 **Output:**
 <img width="362" height="302" alt="image" src="https://github.com/user-attachments/assets/b1ce1ef7-cd98-423c-90c8-cefe0eba10be" />
@@ -157,18 +203,32 @@ PRODUCTS TABLE
 
 name               type
 -----------------  ---------------
+
 product_id         INT
+
 product_name       VARCHAR(100)
+
 category           VARCHAR(50)
+
 cost_price         DECIMAL(10,2)
+
 sell_price         DECIMAL(10,2)
+
 reorder_lvl        INT
+
 quantity           INT
+
 supplier_id        INT
+
 For example:
 
-Test	Result
+Test	
+
 select changes();
+
+Result
+
+
 changes()
 ----------
 4
@@ -177,12 +237,18 @@ changes()
 
 ```sql
 
+
 -UPDATE Products
+
 SET sell_price = sell_price + (sell_price * 10 / 100)
+
 WHERE supplier_id = 6;
+
 ```
 
 **Output:**
+
+
 <img width="945" height="397" alt="image" src="https://github.com/user-attachments/assets/6b60c54c-9400-4bba-806a-fceb2e5e4935" />
 
 
@@ -195,21 +261,29 @@ Write a SQL statement to double the availability of the product with product_id 
 products table
 
 ---------------
+
 product_id
+
 product_name
+
 category_id
+
 availability
 
 
 
 ```sql
+
 UPDATE products
+
 SET availability = availability*2
+
 WHERE product_id=1;
 
 ```
 
 **Output:**
+
 <img width="491" height="90" alt="image" src="https://github.com/user-attachments/assets/f792eef8-e6e4-4a94-be6b-950b57a65f37" />
 
 
@@ -223,29 +297,44 @@ Write a SQL query to Delete a Specific Surgery whose ID is 3
 Sample table: Surgeries
 
 attributes: surgery_id, patient_id, surgeon_id, surgery_date
+
 For example:
 
-Test	Result
+Test	
 SELECT * FROM surgeries;
+
+Result
+
 surgery_id  patient_id  surgeon_id  surgery_date
 ----------  ----------  ----------  ------------
+
 1           1           1           2024-01-15
+
 2           2           2           2024-02-28
+
 3           3           3           2024-03-25
+
+
 surgery_id  patient_id  surgeon_id  surgery_date
+
 ----------  ----------  ----------  ------------
+
 1           1           1           2024-01-15
+
 2           2           2           2024-02-28
 
 
 
 ```sql
+
 DELETE FROM surgeries
+
 WHERE surgery_id=3;
 
 ```
 
 **Output:**
+
 <img width="438" height="248" alt="image" src="https://github.com/user-attachments/assets/e1691cfe-182d-4b74-a1b9-4e43adf61b6f" />
 
 
@@ -266,14 +355,18 @@ Sample table: Customer
 | C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
 For example:
 
-Test	Result
+Test	
 select distinct(grade)from customer;
+
+Result
+
 GRADE
 ----------
 2
 3
 1
 0
+
 GRADE
 ----------
 2
@@ -281,13 +374,16 @@ GRADE
 
 
 ```sql
+
 DELETE FROM Customer
+
 WHERE GRADE<2;
 
 
 ```
 
 **Output:**
+
 <img width="197" height="432" alt="image" src="https://github.com/user-attachments/assets/10d5da90-13f5-4d8c-9086-f8b7bc68533b" />
 
 
@@ -319,13 +415,17 @@ changes()
 3
 
 ```sql
+
 DELETE FROM Customer
+
 WHERE WORKING_AREA = 'New York';
 
 ```
 
 **Output:**
+
 <img width="1102" height="610" alt="image" src="https://github.com/user-attachments/assets/b56ba0e6-833d-4e02-8373-b3870d1327da" />
+
 <img width="1092" height="587" alt="image" src="https://github.com/user-attachments/assets/f126de82-54cd-4790-8912-5f0fcf47e997" />
 
 
