@@ -109,13 +109,20 @@ CREATE TABLE Table_Name (
 Create a table named Customers with the following columns:
 
 CustomerID as INTEGER
+
 Name as TEXT
+
 Email as TEXT
+
 JoinDate as DATETIME
+
 For example:
 
 Test	Result
+
 pragma table_info('Customers');
+
+
 cid         name        type        notnull     dflt_value  pk
 ----------  ----------  ----------  ----------  ----------  ----------
 0           CustomerID  INTEGER     0                       0
@@ -125,15 +132,22 @@ cid         name        type        notnull     dflt_value  pk
 
 
 ```sql
+
 CREATE TABLE Customers(
+
 CustomerID INTEGER,
+
 Name TEXT,
+
 Email TEXT,
+
 JoinDate DATETIME
+
 );
 ```
 
 **Output:**
+
 
 <img width="713" height="318" alt="image" src="https://github.com/user-attachments/assets/8436235d-4630-4049-bbb1-7c08c8a6e62f" />
 
@@ -142,35 +156,57 @@ JoinDate DATETIME
 ---
 Create a table named Employees with the following constraints:
 
+
 EmployeeID should be the primary key.
+
 FirstName and LastName should be NOT NULL.
+
 Email should be unique.
+
 Salary should be greater than 0.
+
 DepartmentID should be a foreign key referencing the Departments table.
+
 For example:
 
 Test	Result
+
 -- Attempt to insert a record with NULL FirstName
+
 INSERT INTO Employees (EmployeeID, FirstName, LastName, Email, Salary, DepartmentID)
+
 VALUES (1, NULL, 'Doe', 'john.doe@example.com', 50000, 1);
+
 Error: NOT NULL constraint failed: Employees.FirstName
 
 
 
 ```sql
+
+
 CREATE TABLE Employees(
+
 EmployeeID INTEGER PRIMARY KEY,
+
 FirstName Varchar(50) NOT NULL,
+
 LastName Varchar(50) NOT NULL,
+
 Email TEXT UNIQUE,
+
 Salary DECIMAL(10,2)CHECK(Salary>0),
+
 DepartmentID TEXT,
+
 FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+
 );
 
 ```
 
 **Output:**
+
+
 <img width="546" height="290" alt="image" src="https://github.com/user-attachments/assets/b433fa36-627d-4010-8d10-d46ad3d085c8" />
 
 
@@ -179,30 +215,48 @@ FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
 **Question 3**
 ---
 Create a new table named contacts with the following specifications:
+
 contact_id as INTEGER and primary key.
+
 first_name as TEXT and not NULL.
+
 last_name as TEXT and not NULL.
+
 email as TEXT.
+
 phone as TEXT and not NULL with a check constraint to ensure the length of phone is at least 10 characters.
+
 For example:
 
 Test	Result
+
 INSERT INTO contacts (contact_id, first_name, last_name, email, phone) VALUES (1, 'John', 'Doe', 'john.doe@example.com', '1234567890');
+
 SELECT * FROM contacts;
 
 
+
 ```sql
+
 CREATE TABLE contacts(
+
 contact_id INTEGER PRIMARY KEY,
+
 first_name TEXT NOT NULL,
+
 last_name TEXT NOT NULL,
+
 email TEXT,
+
 phone TEXT NOT NULL CHECK(length(phone)>=10)
+
 );
 
 ```
 
 **Output:**
+
+
 <img width="680" height="232" alt="image" src="https://github.com/user-attachments/assets/2d7be3a3-8042-474d-8d22-338d93aae955" />
 
 
@@ -210,24 +264,32 @@ phone TEXT NOT NULL CHECK(length(phone)>=10)
 
 **Question 4**
 ---
-nsert a book with ISBN 978-1234567890, Title Data Science Essentials, Author Jane Doe, Publisher TechBooks, and Year 2024 into the Books table.
+Insert a book with ISBN 978-1234567890, Title Data Science Essentials, Author Jane Doe, Publisher TechBooks, and Year 2024 into the Books table.
 
 For example:
 
-Test	Result
+Test
 SELECT * FROM Books;
+
+Result
+
+
 ISBN            Title                    Author      Publisher   Year
 --------------  -----------------------  ----------  ----------  ----------
 978-1234567890  Data Science Essentials  Jane Doe    TechBooks   2024
 
 
 ```sql
+
 INSERT INTO Books(ISBN,Title,Author,Publisher,Year)
+
 VALUES('978-1234567890','Data Science Essentials','Jane Doe','TechBooks',2024);
 -
 ```
 
 **Output:**
+
+
 <img width="665" height="87" alt="image" src="https://github.com/user-attachments/assets/b3d35445-86df-4c87-90c9-cb775f37be7a" />
 
 
@@ -240,8 +302,13 @@ Table attributes are EmployeeID, Name, Department, Salary
 
 For example:
 
-Test	Result
+Test	
+
 select * from Employee;
+
+Result
+
+
 EmployeeID  Name        Department  Salary
 ----------  ----------  ----------  ----------
 201         John Doe    HR          50000
@@ -251,12 +318,16 @@ EmployeeID  Name        Department  Salary
 
 
 ```sql
+
 INSERT INTO Employee
+
 select *from Former_employees;
 
 ```
 
 **Output:**
+
+
 <img width="432" height="157" alt="image" src="https://github.com/user-attachments/assets/d9efaa44-aed5-46e8-9e98-a4ecd76a0e00" />
 
 
@@ -264,12 +335,17 @@ select *from Former_employees;
 
 **Question 6**
 ---
+
 Write a SQL query to add a column named Date_of_birth as Date in the Student_details table.
 
 For example:
 
-Test	Result
+Test	
 pragma table_info('Student_details');
+
+Result
+
+
 cid    name             type             notnu  dflt_value  pk
 -----  ---------------  ---------------  -----  ----------  ----------
 0      RollNo           int              0                  1
@@ -281,12 +357,15 @@ cid    name             type             notnu  dflt_value  pk
 
 
 ```sql
+
 ALTER TABLE Student_details
+
 ADD Date_of_birth Date;
 
 ```
 
 **Output:**
+
 
 <img width="662" height="222" alt="image" src="https://github.com/user-attachments/assets/39e1199a-c859-4a58-b1be-9aa722cd4640" />
 
@@ -295,10 +374,11 @@ ADD Date_of_birth Date;
 **Question 7**
 ---
 Insert the following students into the Student_details table:
+
 RollNo      Name        Gender      Subject     MARKS
 ----------  ----------  ----------  ----------  ----------
-202            Ella King         F           Chemistry   87
-203            James Bond   M          Literature    78
+202           Ella King     F           Chemistry   87
+203          James Bond      M          Literature    78
 
  
 
@@ -306,8 +386,12 @@ RollNo      Name        Gender      Subject     MARKS
 
 For example:
 
-Test	Result
+Test	
+
 SELECT * FROM Student_details;
+
+Result
+
 RollNo      Name        Gender      Subject     MARKS
 ----------  ----------  ----------  ----------  ----------
 202         Ella King   F           Chemistry   87
@@ -316,13 +400,19 @@ RollNo      Name        Gender      Subject     MARKS
 
 
 ```sql
+
 INSERT INTO Student_details(RollNo,Name,Gender,Subject,MARKS)
+
 VALUES(202,'Ella King','F','Chemistry',87),
+
+
       (203,'James Bond','M','Literature',78);
 
 ```
 
 **Output:**
+
+
 <img width="526" height="115" alt="image" src="https://github.com/user-attachments/assets/b257b514-25fa-4f37-bd72-af5aabce44f4" />
 
 
@@ -331,10 +421,15 @@ VALUES(202,'Ella King','F','Chemistry',87),
 **Question 8**
 ---
 Create a table named Shipments with the following constraints:
+
 ShipmentID as INTEGER should be the primary key.
+
 ShipmentDate as DATE.
+
 SupplierID as INTEGER should be a foreign key referencing Suppliers(SupplierID).
+
 OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
+
 For example:
 
 Test	Result
@@ -344,17 +439,26 @@ Error: FOREIGN KEY constraint failed
 
 
 ```sql
+
 CREATE TABLE Shipments(
+
 ShipmentID INTEGER PRIMARY KEY,
+
 ShipmentDate DATE,
+
 SupplierID INTEGER,
+
 OrderID INTEGER,
+
 FOREIGN KEY(SupplierID)REFERENCES Suppliers(SupplierID),
+
 FOREIGN KEY(OrderID)REFERENCES Orders(Orderid)
+
 );
 ```
 
 **Output:**
+
 <img width="337" height="97" alt="image" src="https://github.com/user-attachments/assets/2308ce02-af49-4888-99ac-749816123911" />
 
 
@@ -367,16 +471,15 @@ Write an SQL query to add two new columns, department_id and manager_id, to the 
 
  
 
- 
-
- 
-
- 
-
 For example:
 
-Test	Result
+Test	
+
 PRAGMA table_info(employee);
+
+Result
+
+
 cid         name        type        notnull     dflt_value  pk
 ----------  ----------  ----------  ----------  ----------  ----------
 0           id          integer     0                       0
@@ -388,11 +491,15 @@ cid         name        type        notnull     dflt_value  pk
 
 
 ```sql
+
 ALTER TABLE employee
+
 ADD COLUMN department_id INTEGER;
 
 ALTER TABLE employee
+
 ADD COLUMN manager_id INTEGER DEFAULT
+
 NULL;
 
 ```
@@ -407,15 +514,25 @@ NULL;
 **Question 10**
 ---
 Create a table named Products with the following constraints:
+
 ProductID as INTEGER should be the primary key.
+
 ProductName as TEXT should be unique and not NULL.
+
 Price as REAL should be greater than 0.
+
 StockQuantity as INTEGER should be non-negative.
+
 For example:
 
-Test	Result
+Test	
+
 INSERT INTO Products (ProductID, ProductName, Price, StockQuantity) VALUES (1, 'Laptop', 999.99, 10);
+
 select * from Products;
+
+Result
+
 ProductID   ProductName  Price       StockQuantity
 ----------  -----------  ----------  -------------
 1           Laptop       999.99      10
@@ -423,11 +540,17 @@ ProductID   ProductName  Price       StockQuantity
 
 
 ```sql
+
 CREATE TABLE Products(
+
 ProductID INTEGER PRIMARY KEY,
+
 ProductName TEXT UNIQUE NOT NULL,
+
 Price REAL CHECK(price>0),
+
 StockQuantity INTEGER CHECK(StockQuantity>0)
+
 );
 
 ```
