@@ -40,6 +40,13 @@ HAVING condition;
 --
 <img width="1187" height="565" alt="image" src="https://github.com/user-attachments/assets/849d52ca-eb62-403b-94ba-258412753517" />
 
+SELECT name, city
+FROM customer
+WHERE city IN (
+  SELECT city
+  FROM customer
+  WHERE id IN (3, 7)
+);
 
 **Output:**
 
@@ -49,6 +56,13 @@ HAVING condition;
 **Question 2**
 <img width="1223" height="712" alt="image" src="https://github.com/user-attachments/assets/5501eee4-3109-4733-97bf-cc5eb66c8c20" />
 
+SELECT student_name, grade
+FROM GRADES g
+WHERE grade = (
+  SELECT MIN(grade)
+  FROM GRADES
+  WHERE subject = g.subject
+);
 
 **Output:**
 <img width="1177" height="531" alt="image" src="https://github.com/user-attachments/assets/b8a5cfc4-85cf-4f58-835c-f5210d1a3c10" />
@@ -58,6 +72,14 @@ HAVING condition;
 ---
 <img width="1205" height="593" alt="image" src="https://github.com/user-attachments/assets/dd092769-2758-4059-9cbe-ae20f71b7353" />
 
+SELECT name
+FROM customer
+WHERE phone IN (
+  SELECT phone
+  FROM customer
+  GROUP BY phone
+  HAVING COUNT(*) = 1
+);
 
 **Output:**
 <img width="814" height="541" alt="image" src="https://github.com/user-attachments/assets/87b8c775-96a7-4df6-8f45-db2122cacf1a" />
@@ -67,6 +89,13 @@ HAVING condition;
 ---
 <img width="1178" height="772" alt="image" src="https://github.com/user-attachments/assets/6423d8b4-7f07-438e-ac13-65d679adebf4" />
 
+SELECT *
+FROM customer
+WHERE customer_id = (
+  SELECT salesman_id - 2001
+  FROM salesman
+  WHERE name = 'Mc Lyon'
+);
 
 **Output:**
 <img width="1250" height="412" alt="image" src="https://github.com/user-attachments/assets/389c3a3a-c08e-4b15-87e5-72a27aaf252b" />
@@ -74,54 +103,90 @@ HAVING condition;
 
 **Question 5**
 ---
-
-
-**Output:**
-
-![Output5](output.png)
-
-**Question 6**
----
 <img width="936" height="554" alt="image" src="https://github.com/user-attachments/assets/6ef219b6-c1ac-43d0-b9d7-fa3a4c7f5c57" />
 
+SELECT medication_id, medication_name, dosage
+FROM Medications
+WHERE dosage = (
+  SELECT MIN(dosage)
+  FROM Medications
+);
 
 **Output:**
 <img width="1016" height="497" alt="image" src="https://github.com/user-attachments/assets/efdc2112-a6c0-4eca-b106-e3e8b01fe36a" />
 
 
-**Question 7**
+
+**Question 6**
 ---
 <img width="1198" height="681" alt="image" src="https://github.com/user-attachments/assets/37a209b0-4947-4a15-ad2a-cefff798e29d" />
 
+SELECT *
+FROM Employee
+WHERE age < (
+  SELECT AVG(age)
+  FROM Employee
+  WHERE income > 250000
+);
+
 
 **Output:**
+
 <img width="1245" height="624" alt="image" src="https://github.com/user-attachments/assets/c96c28b2-b829-4340-a56d-cc6d8f106a59" />
 
-**Question 8**
+
+
+**Question 7**
 ---
 <img width="1162" height="637" alt="image" src="https://github.com/user-attachments/assets/b4986105-e4ce-46c9-9c17-0d269ee97490" />
 
-
+SELECT *
+FROM Employee
+WHERE age < (
+  SELECT AVG(age)
+  FROM Employee
+  WHERE income > 1000000
+);
 **Output:**
 <img width="1280" height="508" alt="image" src="https://github.com/user-attachments/assets/c385b22e-3f27-4bf7-9128-e644ad181def" />
 
 
-**Question 9**
+**Question 8**
 ---
 <img width="1011" height="777" alt="image" src="https://github.com/user-attachments/assets/5c0236ad-eda9-489f-818c-7dfa75363eeb" />
 
-
+SELECT *
+FROM CUSTOMERS
+WHERE SALARY > 1500;
 **Output:**
+
 <img width="1263" height="681" alt="image" src="https://github.com/user-attachments/assets/07a0a620-51c7-4dc1-8b5e-760b9db6f560" />
 
 
-**Question 10**
----
+**Question 9**
 <img width="1104" height="476" alt="image" src="https://github.com/user-attachments/assets/fe917261-edb9-48de-96e6-f2fe0ec139d3" />
 
+SELECT *
+FROM Departments
+WHERE LENGTH(department_name) > (
+  SELECT AVG(LENGTH(department_name))
+  FROM Departments
+);
 
 **Output:**
+
 <img width="679" height="475" alt="image" src="https://github.com/user-attachments/assets/4c7257d4-089f-4231-8193-b250fc3037b4" />
+
+**Question 10**
+---
+<img width="1059" height="724" alt="image" src="https://github.com/user-attachments/assets/de1bf945-84b9-4070-8d02-55329429060c" />
+
+SELECT *
+FROM CUSTOMERS
+WHERE SALARY < 2500;
+
+**Output:**
+<img width="1274" height="553" alt="image" src="https://github.com/user-attachments/assets/a8ef9a91-1b47-466f-9a80-a0221bb5cded" />
 
 
 
